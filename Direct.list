@@ -20,6 +20,7 @@ DOMAIN-KEYWORD,bilibili
 
 # IP段匹配
 IP-CIDR,219.146.1.66/32,no-resolve
+IP-CIDR,104.18.27.90/32
 
 # 国内DNS
 DOMAIN-SUFFIX,dns.alidns.com
