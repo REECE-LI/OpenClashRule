@@ -20,6 +20,10 @@ DOMAIN-KEYWORD,githubcopilot
 IP-CIDR,142.171.133.131/32,no-resolve
 IP-CIDR,103.115.43.2/32,no-resolve
 IP-CIDR,20.205.243.166/32,no-resolve
+IP-CIDR,185.199.108.154/32,no-resolve
+IP-CIDR,140.82.112.22/32,no-resolve
+	
+
 
 # 国外DNS
 DOMAIN-SUFFIX,dns.google
