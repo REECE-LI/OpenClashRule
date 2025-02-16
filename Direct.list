@@ -9,6 +9,7 @@ DOMAIN-SUFFIX,bing.com
 DOMAIN-SUFFIX,bing.net
 DOMAIN-SUFFIX,deepseek.com
 DOMAIN-SUFFIX,moonshot.cn
+DOMAIN-SUFFIX,feishu.cn
 
 
 # 域名关键字匹配
@@ -17,6 +18,8 @@ DOMAIN-KEYWORD,linglun
 DOMAIN-KEYWORD,claudechn
 DOMAIN-KEYWORD,bing
 DOMAIN-KEYWORD,bilibili
+DOMAIN-KEYWORD,lceda
+DOMAIN-KEYWORD,feishu
 
 # IP段匹配
 IP-CIDR,219.146.1.66/32,no-resolve
