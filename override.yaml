@@ -207,11 +207,6 @@
   - DOMAIN-KEYWORD,githubusercontent,🚀 国外流量
   - DOMAIN-KEYWORD,espressif,🚀 国外流量
 
-  - IP-CIDR,142.171.133.131/32,no-resolve,🚀 国外流量
-  - IP-CIDR,103.115.43.2/32,no-resolve,🚀 国外流量
-  - IP-CIDR,20.205.243.166/32,no-resolve,🚀 国外流量
-  - IP-CIDR,185.199.108.154/32,no-resolve,🚀 国外流量
-  - IP-CIDR,140.82.112.22/32,no-resolve,🚀 国外流量
 
   - DOMAIN-SUFFIX,dns.google,🚀 国外流量
   - DOMAIN-SUFFIX,1dot1dot1dot1.cloudflare-dns.com,🚀 国外流量
