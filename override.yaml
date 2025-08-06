@@ -1,0 +1,223 @@
+# ================================
+# override.yaml
+# 完整规则：OpenAi/Bard/Anthropic 关键字与后缀 -> 🚀 国外流量
+#          “直连补充列表” -> 🇨🇳 国内流量
+#          “代理补充列表” -> 🚀 国外流量
+# ================================
+
++rules:
+  ## —— OpenAi Bard Anthropic 关键字匹配（走 🚀 国外流量） —— 
+  - DOMAIN-KEYWORD,openai,🚀 国外流量
+  - DOMAIN-KEYWORD,anthropic,🚀 国外流量
+  - DOMAIN-KEYWORD,Claude,🚀 国外流量
+  - DOMAIN-KEYWORD,chatgpt,🚀 国外流量
+  - DOMAIN-KEYWORD,autodesk,🚀 国外流量
+
+  ## —— OpenAi Bard Anthropic 域名后缀匹配（走 🚀 国外流量） —— 
+  - DOMAIN-SUFFIX,perplexity.ai,🚀 国外流量
+  - DOMAIN-SUFFIX,chatgpt.com,🚀 国外流量
+  - DOMAIN-SUFFIX,auth0.com,🚀 国外流量
+  - DOMAIN-SUFFIX,client-api.arkoselabs.com,🚀 国外流量
+  - DOMAIN-SUFFIX,events.statsigapi.net,🚀 国外流量
+  - DOMAIN-SUFFIX,featuregates.org,🚀 国外流量
+  - DOMAIN-SUFFIX,identrust.com,🚀 国外流量
+  - DOMAIN-SUFFIX,intercom.io,🚀 国外流量
+  - DOMAIN-SUFFIX,intercomcdn.com,🚀 国外流量
+  - DOMAIN-SUFFIX,oaistatic.com,🚀 国外流量
+  - DOMAIN-SUFFIX,oaiusercontent.com,🚀 国外流量
+  - DOMAIN-SUFFIX,openai.com,🚀 国外流量
+  - DOMAIN-SUFFIX,openaiapi-site.azureedge.net,🚀 国外流量
+  - DOMAIN-SUFFIX,sentry.io,🚀 国外流量
+  - DOMAIN-SUFFIX,stripe.com,🚀 国外流量
+  - DOMAIN-SUFFIX,bard.google.com,🚀 国外流量
+  - DOMAIN-SUFFIX,gemini.google.com,🚀 国外流量
+  - DOMAIN-SUFFIX,makersuite.google.com,🚀 国外流量
+  - DOMAIN-SUFFIX,anthropic.com,🚀 国外流量
+  - DOMAIN-SUFFIX,claude.ai.com,🚀 国外流量
+  - DOMAIN-SUFFIX,clientstream.launchdarkly.com,🚀 国外流量
+
+  ## —— 直连补充列表（🇨🇳 国内流量） —— 
+  # 域名后缀
+  - DOMAIN-SUFFIX,time.windows.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,lanzov.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,hao123.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,bing.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,bing.net,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,deepseek.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,moonshot.cn,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,feishu.cn,🇨🇳 国内流量
+
+  # 域名关键字
+  - DOMAIN-KEYWORD,baidu,🇨🇳 国内流量
+  - DOMAIN-KEYWORD,linglun,🇨🇳 国内流量
+  - DOMAIN-KEYWORD,claudechn,🇨🇳 国内流量
+  - DOMAIN-KEYWORD,bing,🇨🇳 国内流量
+  - DOMAIN-KEYWORD,bilibili,🇨🇳 国内流量
+  - DOMAIN-KEYWORD,lceda,🇨🇳 国内流量
+  - DOMAIN-KEYWORD,feishu,🇨🇳 国内流量
+
+
+
+  # 国内 DNS
+  - DOMAIN-SUFFIX,dns.alidns.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,doh.pub,🇨🇳 国内流量
+
+  # 360 系列
+  - DOMAIN-SUFFIX,360.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,360kuai.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,360safe.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,dhrest.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,qhres.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,qhstatic.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,qhupdate.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,so.com,🇨🇳 国内流量
+
+  # 58 同城
+  - DOMAIN-SUFFIX,58.com,🇨🇳 国内流量
+
+  # 阿里系
+  - DOMAIN-SUFFIX,1688.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,aliapp.org,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,alibaba.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,alibabacloud.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,alibabausercontent.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,alicdn.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,alicloudccp.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,aliexpress.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,aliimg.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,alikunlun.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,alipay.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,alipayobjects.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,alisoft.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,aliyun.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,aliyuncdn.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,aliyuncs.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,aliyundrive.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,aliyundrive.net,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,amap.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,autonavi.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,dingtalk.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,ele.me,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,hichina.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,mmstat.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,mxhichina.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,soku.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,taobao.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,taobaocdn.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,tbcache.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,tbcdn.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,tmall.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,tmall.hk,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,ucweb.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,xiami.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,xiami.net,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,ykimg.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,youku.com,🇨🇳 国内流量
+
+  # 百度系
+  - DOMAIN-SUFFIX,baidu.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,baidubcr.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,baidupcs.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,baidustatic.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,bcebos.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,bdimg.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,bdstatic.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,bdurl.net,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,hao123.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,hao123img.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,jomodns.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,yunjiasu-cdn.net,🇨🇳 国内流量
+
+  # 哔哩哔哩系
+  - DOMAIN-SUFFIX,acg.tv,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,acgvideo.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,b23.tv,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,bigfun.cn,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,bigfunapp.cn,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,biliapi.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,biliapi.net,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,bilibili.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,bilibili.co,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,biliintl.co,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,biligame.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,biligame.net,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,bilivideo.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,bilivideo.cn,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,hdslb.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,im9.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,smtcdns.net,🇨🇳 国内流量
+
+  # 字节跳动系
+  - DOMAIN-SUFFIX,amemv.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,bdxiguaimg.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,bdxiguastatic.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,byted-static.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,bytedance.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,bytedance.net,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,bytedns.net,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,bytednsdoc.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,bytegoofy.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,byteimg.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,bytescm.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,bytetos.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,bytexservice.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,douyin.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,douyincdn.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,douyinpic.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,douyinstatic.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,douyinvod.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,feelgood.cn,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,feiliao.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,gifshow.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,huoshan.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,huoshanzhibo.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,ibytedapm.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,iesdouyin.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,ixigua.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,kspkg.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,pstatp.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,snssdk.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,toutiao.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,toutiao13.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,toutiaoapi.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,toutiaocdn.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,toutiaocdn.net,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,toutiaocloud.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,toutiaohao.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,toutiaohao.net,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,toutiaoimg.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,toutiaopage.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,wukong.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,zijieapi.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,zijieimg.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,zjbyte.com,🇨🇳 国内流量
+  - DOMAIN-SUFFIX,zjcdn.com,🇨🇳 国内流量
+
+  ## —— 代理补充列表（走 🚀 国外流量） —— 
+  - DOMAIN-SUFFIX,qichiyu.com,🚀 国外流量
+  - DOMAIN-SUFFIX,missav.com,🚀 国外流量
+  - DOMAIN-SUFFIX,missav.ws,🚀 国外流量
+  - DOMAIN-SUFFIX,github.com,🚀 国外流量
+
+  - DOMAIN-KEYWORD,1e100,🚀 国外流量
+  - DOMAIN-KEYWORD,missav,🚀 国外流量
+  - DOMAIN-KEYWORD,missav.ws,🚀 国外流量
+  - DOMAIN-KEYWORD,client-rapi-missav,🚀 国外流量
+  - DOMAIN-KEYWORD,githubcopilot,🚀 国外流量
+  - DOMAIN-KEYWORD,githubusercontent,🚀 国外流量
+  - DOMAIN-KEYWORD,espressif,🚀 国外流量
+
+  - IP-CIDR,142.171.133.131/32,no-resolve,🚀 国外流量
+  - IP-CIDR,103.115.43.2/32,no-resolve,🚀 国外流量
+  - IP-CIDR,20.205.243.166/32,no-resolve,🚀 国外流量
+  - IP-CIDR,185.199.108.154/32,no-resolve,🚀 国外流量
+  - IP-CIDR,140.82.112.22/32,no-resolve,🚀 国外流量
+
+  - DOMAIN-SUFFIX,dns.google,🚀 国外流量
+  - DOMAIN-SUFFIX,1dot1dot1dot1.cloudflare-dns.com,🚀 国外流量
+  - DOMAIN-SUFFIX,dot.sb,🚀 国外流量
+  - DOMAIN-SUFFIX,dns.umbrella.com,🚀 国外流量
+  - DOMAIN-SUFFIX,dns.quad9.net,🚀 国外流量
+  - DOMAIN-SUFFIX,cloudflare-dns.com,🚀 国外流量
+  - DOMAIN-SUFFIX,doh.dns.sb,🚀 国外流量
+  - DOMAIN-SUFFIX,doh.opendns.com,🚀 国外流量
