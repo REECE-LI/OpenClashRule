@@ -27,6 +27,8 @@ DOMAIN-SUFFIX,makersuite.google.com
 DOMAIN-SUFFIX,anthropic.com
 DOMAIN-SUFFIX,claude.ai.com
 DOMAIN-SUFFIX,clientstream.launchdarkly.com
+DOMAIN-SUFFIX,autodesk.com
+
 
 
 # 域名关键字匹配
