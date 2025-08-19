@@ -25,6 +25,7 @@ DOMAIN-KEYWORD,byr
 DOMAIN-KEYWORD,sustech
 DOMAIN-KEYWORD,ieeexplore
 DOMAIN-KEYWORD,sciencedirect
+DOMAIN-KEYWORD,sustech
 
 # IP段匹配
 IP-CIDR,219.146.1.66/32,no-resolve
