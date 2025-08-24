@@ -1,5 +1,12 @@
 DOMAIN-SUFFIX,st.com
-
-
+DOMAIN-SUFFIX,espressif.com
+DOMAIN-SUFFIX,espressif.cn
+DOMAIN-SUFFIX,esp32.com
+DOMAIN-SUFFIX,docs.espressif.com
+DOMAIN-SUFFIX,dl.espressif.com
+DOMAIN-SUFFIX,dl.espressif.cn
+DOMAIN-SUFFIX,components.espressif.com
+DOMAIN-SUFFIX,packages.espressif.com
+DOMAIN-KEYWORD,espressif
 
 
