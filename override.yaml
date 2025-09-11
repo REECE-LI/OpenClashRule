@@ -1,221 +1,525 @@
-# ================================
-# override.yaml
-# 完整规则：OpenAi/Bard/Anthropic 关键字与后缀 -> 🚀 国外流量
-#          “直连补充列表” -> 🇨🇳 国内流量
-#          “代理补充列表” -> 🚀 国外流量
-# ================================
+proxy-groups:
+  - name: 🚀 节点选择
+    type: select
+    proxies:
+      - ♻️ 自动选择
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+      - DIRECT
+  - name: 🚀 手动切换
+    include-all: true
+    type: select
+  - name: ♻️ 自动选择
+    type: url-test
+    include-all: true
+    interval: 300
+    tolerance: 50
+  - name: 📲 电报消息
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+      - DIRECT
+  - name: 💬 OpenAi
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+      - DIRECT
+  - name: 🤖 Claude
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇺🇲 美国节点
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+      - DIRECT
+  - name: 📹 油管视频
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+      - DIRECT
+  - name: 🎥 奈飞视频
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🎥 奈飞节点
+      - 🇸🇬 狮城节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+      - DIRECT
+  - name: 📺 巴哈姆特
+    type: select
+    proxies:
+      - 🇨🇳 台湾节点
+      - 🚀 节点选择
+      - 🚀 手动切换
+      - DIRECT
+  - name: 📺 哔哩哔哩
+    type: select
+    proxies:
+      - 🎯 全球直连
+      - 🇨🇳 台湾节点
+      - 🇭🇰 香港节点
+  - name: 🌍 国外媒体
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+      - DIRECT
+  - name: 🌏 国内媒体
+    type: select
+    proxies:
+      - DIRECT
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🚀 手动切换
+  - name: 📢 谷歌FCM
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🇺🇲 美国节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+  - name: Ⓜ️ 微软Bing
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🇺🇲 美国节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+  - name: Ⓜ️ 微软云盘
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🇺🇲 美国节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+  - name: Ⓜ️ 微软服务
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - DIRECT
+      - 🇺🇲 美国节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+  - name: 🍎 苹果服务
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🇺🇲 美国节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+  - name: 🎮 游戏平台
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - 🇺🇲 美国节点
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+  - name: 🎶 网易音乐
+    type: select
+    include-all: true
+    filter: (?i)网易|音乐|NetEase|Music
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+  - name: 🛑 广告拦截
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🍃 应用净化
+    type: select
+    proxies:
+      - REJECT
+      - DIRECT
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - DIRECT
+      - 🇭🇰 香港节点
+      - 🇨🇳 台湾节点
+      - 🇸🇬 狮城节点
+      - 🇯🇵 日本节点
+      - 🇺🇲 美国节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+  - name: 🇭🇰 香港节点
+    include-all: true
+    filter: (?i)港|HK|hk|Hong Kong|HongKong|hongkong
+    type: url-test
+    interval: 300
+    tolerance: 50
+  - name: 🇯🇵 日本节点
+    include-all: true
+    filter: (?i)日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan
+    type: url-test
+    interval: 300
+    tolerance: 50
+  - name: 🇺🇲 美国节点
+    include-all: true
+    filter: (?i)美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States
+    type: url-test
+    interval: 300
+    tolerance: 50
+  - name: 🇨🇳 台湾节点
+    include-all: true
+    filter: (?i)台|新北|彰化|TW|Taiwan
+    type: url-test
+    interval: 300
+    tolerance: 50
+  - name: 🇸🇬 狮城节点
+    include-all: true
+    filter: (?i)新加坡|坡|狮城|SG|Singapore
+    type: url-test
+    interval: 300
+    tolerance: 50
+  - name: 🇰🇷 韩国节点
+    include-all: true
+    filter: (?i)KR|Korea|KOR|首尔|韩|韓
+    type: url-test
+    interval: 300
+    tolerance: 50
+  - name: 🎥 奈飞节点
+    include-all: true
+    filter: (?i)NF|奈飞|解锁|Netflix|NETFLIX|Media
+    type: select
 
-+rules:
-  ## —— OpenAi Bard Anthropic 关键字匹配（走 🚀 国外流量） —— 
-  - DOMAIN-KEYWORD,openai,🚀 国外流量
-  - DOMAIN-KEYWORD,anthropic,🚀 国外流量
-  - DOMAIN-KEYWORD,Claude,🚀 国外流量
-  - DOMAIN-KEYWORD,chatgpt,🚀 国外流量
-  - DOMAIN-KEYWORD,autodesk,🚀 国外流量
+rule-providers:
+  LocalAreaNetwork:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/LocalAreaNetwork.list
+    path: ./ruleset/LocalAreaNetwork.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  UnBan:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/UnBan.list
+    path: ./ruleset/UnBan.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  BanAD:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/BanAD.list
+    path: ./ruleset/BanAD.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  BanProgramAD:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/BanProgramAD.list
+    path: ./ruleset/BanProgramAD.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  GoogleFCM:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/GoogleFCM.list
+    path: ./ruleset/GoogleFCM.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  GoogleCN:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/GoogleCN.list
+    path: ./ruleset/GoogleCN.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  SteamCN:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/SteamCN.list
+    path: ./ruleset/SteamCN.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Bing:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Bing.list
+    path: ./ruleset/Bing.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  OneDrive:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/OneDrive.list
+    path: ./ruleset/OneDrive.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Microsoft:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Microsoft.list
+    path: ./ruleset/Microsoft.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Apple:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Apple.list
+    path: ./ruleset/Apple.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Telegram:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Telegram.list
+    path: ./ruleset/Telegram.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  OpenAi:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/OpenAi.list
+    path: ./ruleset/OpenAi.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Claude:
+    url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Claude/Claude.list
+    path: ./ruleset/Claude.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  NetEaseMusic:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/NetEaseMusic.list
+    path: ./ruleset/NetEaseMusic.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Epic:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Epic.list
+    path: ./ruleset/Epic.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Origin:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Origin.list
+    path: ./ruleset/Origin.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Sony:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Sony.list
+    path: ./ruleset/Sony.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Steam:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Steam.list
+    path: ./ruleset/Steam.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Nintendo:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Nintendo.list
+    path: ./ruleset/Nintendo.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  YouTube:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/YouTube.list
+    path: ./ruleset/YouTube.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Netflix:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Netflix.list
+    path: ./ruleset/Netflix.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Bahamut:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Bahamut.list
+    path: ./ruleset/Bahamut.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  BilibiliHMT:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/BilibiliHMT.list
+    path: ./ruleset/BilibiliHMT.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Bilibili:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Bilibili.list
+    path: ./ruleset/Bilibili.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  ChinaMedia:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ChinaMedia.list
+    path: ./ruleset/ChinaMedia.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  ProxyMedia:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ProxyMedia.list
+    path: ./ruleset/ProxyMedia.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  ProxyGFWlist:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ProxyGFWlist.list
+    path: ./ruleset/ProxyGFWlist.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  ChinaDomain:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ChinaDomain.list
+    path: ./ruleset/ChinaDomain.list
+    behavior: domain
+    interval: 86400
+    format: text
+    type: http
+  ChinaCompanyIp:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ChinaCompanyIp.list
+    path: ./ruleset/ChinaCompanyIp.list
+    behavior: ipcidr
+    interval: 86400
+    format: text
+    type: http
+  Download:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Download.list
+    path: ./ruleset/Download.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
 
-  ## —— OpenAi Bard Anthropic 域名后缀匹配（走 🚀 国外流量） —— 
-  - DOMAIN-SUFFIX,perplexity.ai,🚀 国外流量
-  - DOMAIN-SUFFIX,chatgpt.com,🚀 国外流量
-  - DOMAIN-SUFFIX,auth0.com,🚀 国外流量
-  - DOMAIN-SUFFIX,client-api.arkoselabs.com,🚀 国外流量
-  - DOMAIN-SUFFIX,events.statsigapi.net,🚀 国外流量
-  - DOMAIN-SUFFIX,featuregates.org,🚀 国外流量
-  - DOMAIN-SUFFIX,identrust.com,🚀 国外流量
-  - DOMAIN-SUFFIX,intercom.io,🚀 国外流量
-  - DOMAIN-SUFFIX,intercomcdn.com,🚀 国外流量
-  - DOMAIN-SUFFIX,oaistatic.com,🚀 国外流量
-  - DOMAIN-SUFFIX,oaiusercontent.com,🚀 国外流量
-  - DOMAIN-SUFFIX,openai.com,🚀 国外流量
-  - DOMAIN-SUFFIX,openaiapi-site.azureedge.net,🚀 国外流量
-  - DOMAIN-SUFFIX,sentry.io,🚀 国外流量
-  - DOMAIN-SUFFIX,stripe.com,🚀 国外流量
-  - DOMAIN-SUFFIX,bard.google.com,🚀 国外流量
-  - DOMAIN-SUFFIX,gemini.google.com,🚀 国外流量
-  - DOMAIN-SUFFIX,makersuite.google.com,🚀 国外流量
-  - DOMAIN-SUFFIX,anthropic.com,🚀 国外流量
-  - DOMAIN-SUFFIX,claude.ai.com,🚀 国外流量
-  - DOMAIN-SUFFIX,clientstream.launchdarkly.com,🚀 国外流量
-
-  ## —— 直连补充列表（🇨🇳 国内流量） —— 
-  # 域名后缀
-  - DOMAIN-SUFFIX,time.windows.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,lanzov.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,hao123.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,bing.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,bing.net,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,deepseek.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,moonshot.cn,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,feishu.cn,🇨🇳 国内流量
-
-  # 域名关键字
-  - DOMAIN-KEYWORD,baidu,🇨🇳 国内流量
-  - DOMAIN-KEYWORD,linglun,🇨🇳 国内流量
-  - DOMAIN-KEYWORD,claudechn,🇨🇳 国内流量
-  - DOMAIN-KEYWORD,bing,🇨🇳 国内流量
-  - DOMAIN-KEYWORD,bilibili,🇨🇳 国内流量
-  - DOMAIN-KEYWORD,lceda,🇨🇳 国内流量
-  - DOMAIN-KEYWORD,feishu,🇨🇳 国内流量
-  - DOMAIN-KEYWORD,ieeexplore,🇨🇳 国内流量
-  - DOMAIN-KEYWORD,sciencedirect,🇨🇳 国内流量
-
-
-
-
-  # 国内 DNS
-  - DOMAIN-SUFFIX,dns.alidns.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,doh.pub,🇨🇳 国内流量
-
-  # 360 系列
-  - DOMAIN-SUFFIX,360.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,360kuai.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,360safe.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,dhrest.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,qhres.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,qhstatic.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,qhupdate.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,so.com,🇨🇳 国内流量
-
-  # 58 同城
-  - DOMAIN-SUFFIX,58.com,🇨🇳 国内流量
-
-  # 阿里系
-  - DOMAIN-SUFFIX,1688.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,aliapp.org,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,alibaba.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,alibabacloud.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,alibabausercontent.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,alicdn.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,alicloudccp.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,aliexpress.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,aliimg.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,alikunlun.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,alipay.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,alipayobjects.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,alisoft.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,aliyun.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,aliyuncdn.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,aliyuncs.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,aliyundrive.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,aliyundrive.net,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,amap.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,autonavi.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,dingtalk.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,ele.me,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,hichina.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,mmstat.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,mxhichina.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,soku.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,taobao.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,taobaocdn.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,tbcache.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,tbcdn.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,tmall.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,tmall.hk,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,ucweb.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,xiami.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,xiami.net,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,ykimg.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,youku.com,🇨🇳 国内流量
-
-  # 百度系
-  - DOMAIN-SUFFIX,baidu.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,baidubcr.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,baidupcs.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,baidustatic.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,bcebos.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,bdimg.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,bdstatic.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,bdurl.net,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,hao123.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,hao123img.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,jomodns.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,yunjiasu-cdn.net,🇨🇳 国内流量
-
-  # 哔哩哔哩系
-  - DOMAIN-SUFFIX,acg.tv,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,acgvideo.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,b23.tv,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,bigfun.cn,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,bigfunapp.cn,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,biliapi.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,biliapi.net,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,bilibili.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,bilibili.co,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,biliintl.co,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,biligame.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,biligame.net,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,bilivideo.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,bilivideo.cn,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,hdslb.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,im9.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,smtcdns.net,🇨🇳 国内流量
-
-  # 字节跳动系
-  - DOMAIN-SUFFIX,amemv.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,bdxiguaimg.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,bdxiguastatic.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,byted-static.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,bytedance.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,bytedance.net,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,bytedns.net,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,bytednsdoc.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,bytegoofy.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,byteimg.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,bytescm.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,bytetos.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,bytexservice.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,douyin.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,douyincdn.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,douyinpic.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,douyinstatic.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,douyinvod.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,feelgood.cn,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,feiliao.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,gifshow.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,huoshan.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,huoshanzhibo.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,ibytedapm.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,iesdouyin.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,ixigua.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,kspkg.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,pstatp.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,snssdk.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,toutiao.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,toutiao13.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,toutiaoapi.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,toutiaocdn.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,toutiaocdn.net,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,toutiaocloud.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,toutiaohao.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,toutiaohao.net,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,toutiaoimg.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,toutiaopage.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,wukong.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,zijieapi.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,zijieimg.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,zjbyte.com,🇨🇳 国内流量
-  - DOMAIN-SUFFIX,zjcdn.com,🇨🇳 国内流量
-
-  ## —— 代理补充列表（走 🚀 国外流量） —— 
-  - DOMAIN-SUFFIX,qichiyu.com,🚀 国外流量
-  - DOMAIN-SUFFIX,missav.com,🚀 国外流量
-  - DOMAIN-SUFFIX,missav.ws,🚀 国外流量
-  - DOMAIN-SUFFIX,github.com,🚀 国外流量
-
-  - DOMAIN-KEYWORD,1e100,🚀 国外流量
-  - DOMAIN-KEYWORD,missav,🚀 国外流量
-  - DOMAIN-KEYWORD,missav.ws,🚀 国外流量
-  - DOMAIN-KEYWORD,client-rapi-missav,🚀 国外流量
-  - DOMAIN-KEYWORD,githubcopilot,🚀 国外流量
-  - DOMAIN-KEYWORD,githubusercontent,🚀 国外流量
-  - DOMAIN-KEYWORD,espressif,🚀 国外流量
-
-
-  - DOMAIN-SUFFIX,dns.google,🚀 国外流量
-  - DOMAIN-SUFFIX,1dot1dot1dot1.cloudflare-dns.com,🚀 国外流量
-  - DOMAIN-SUFFIX,dot.sb,🚀 国外流量
-  - DOMAIN-SUFFIX,dns.umbrella.com,🚀 国外流量
-  - DOMAIN-SUFFIX,dns.quad9.net,🚀 国外流量
-  - DOMAIN-SUFFIX,cloudflare-dns.com,🚀 国外流量
-  - DOMAIN-SUFFIX,doh.dns.sb,🚀 国外流量
-  - DOMAIN-SUFFIX,doh.opendns.com,🚀 国外流量
+rules:
+  - "RULE-SET,LocalAreaNetwork,🎯 全球直连"
+  - "RULE-SET,UnBan,🎯 全球直连"
+  - "RULE-SET,BanAD,🛑 广告拦截"
+  - "RULE-SET,BanProgramAD,🍃 应用净化"
+  - "RULE-SET,GoogleFCM,📢 谷歌FCM"
+  - "RULE-SET,GoogleCN,🎯 全球直连"
+  - "RULE-SET,SteamCN,🎯 全球直连"
+  - "RULE-SET,Bing,Ⓜ️ 微软Bing"
+  - "RULE-SET,OneDrive,Ⓜ️ 微软云盘"
+  - "RULE-SET,Microsoft,Ⓜ️ 微软服务"
+  - "RULE-SET,Apple,🍎 苹果服务"
+  - "RULE-SET,Telegram,📲 电报消息"
+  - "RULE-SET,OpenAi,💬 OpenAi"
+  - "RULE-SET,Claude,🤖 Claude"
+  - "RULE-SET,NetEaseMusic,🎶 网易音乐"
+  - "RULE-SET,Epic,🎮 游戏平台"
+  - "RULE-SET,Origin,🎮 游戏平台"
+  - "RULE-SET,Sony,🎮 游戏平台"
+  - "RULE-SET,Steam,🎮 游戏平台"
+  - "RULE-SET,Nintendo,🎮 游戏平台"
+  - "RULE-SET,YouTube,📹 油管视频"
+  - "RULE-SET,Netflix,🎥 奈飞视频"
+  - "RULE-SET,Bahamut,📺 巴哈姆特"
+  - "RULE-SET,BilibiliHMT,📺 哔哩哔哩"
+  - "RULE-SET,Bilibili,📺 哔哩哔哩"
+  - "RULE-SET,ChinaMedia,🌏 国内媒体"
+  - "RULE-SET,ProxyMedia,🌍 国外媒体"
+  - "RULE-SET,ProxyGFWlist,🚀 节点选择"
+  - "RULE-SET,ChinaDomain,🎯 全球直连"
+  - "RULE-SET,ChinaCompanyIp,🎯 全球直连"
+  - "RULE-SET,Download,🎯 全球直连"
+  - "GEOIP,CN,🎯 全球直连"
+  - "MATCH,🐟 漏网之鱼"
