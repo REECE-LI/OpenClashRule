@@ -424,6 +424,13 @@ rule-providers:
     interval: 86400
     format: text
     type: http
+  SelfAi:
+    url: https://raw.githubusercontent.com/REECE-LI/OpenClashRule/refs/heads/main/AI.list
+    path: ./ruleset/SelfAi.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
   OpenAi:
     url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/OpenAi.list
     path: ./ruleset/OpenAi.list
