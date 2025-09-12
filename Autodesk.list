@@ -13,3 +13,7 @@ DOMAIN-SUFFIX,inventor.com
 DOMAIN-SUFFIX,adnxs.com
 DOMAIN-SUFFIX,adsystem.com
 DOMAIN-KEYWORD,autodesk
+DOMAIN-SUFFIX,clientstream.launchdarkly.com
+DOMAIN,clientstream.launchdarkly.com
+DOMAIN-SUFFIX,requirejs.org
+DOMAIN-SUFFIX,unpkg.com
