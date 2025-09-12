@@ -34,6 +34,7 @@ proxy-providers:
 
 rules:
   - "RULE-SET,OpenAi,💬 OpenAi"
+  - "RULE-SET,SelfAi,💬 OpenAi"
   - "RULE-SET,Claude,🤖 Claude"
   - "RULE-SET,BanAD,🛑 广告拦截"
   - "RULE-SET,BanProgramAD,🍃 应用净化"
