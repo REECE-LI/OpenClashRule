@@ -43,7 +43,9 @@ rules:
   - "RULE-SET,ChinaDomain,🎯 全球直连"
   - "RULE-SET,BilibiliHMT,📺 哔哩哔哩"
   - "RULE-SET,Bilibili,📺 哔哩哔哩"
+  - "RULE-SET,Spotify,🎵 Spotify"
   - "RULE-SET,GoogleFCM,📢 谷歌FCM"
+  - "RULE-SET,Autodesk,🛠️ Autodesk"
   - "RULE-SET,GoogleCN,🎯 全球直连"
   - "RULE-SET,SteamCN,🎯 全球直连"
   - "RULE-SET,Bing,Ⓜ️ 微软Bing"
@@ -69,6 +71,19 @@ rules:
   - "MATCH,🐟 漏网之鱼"
 
 proxy-groups:
+  - name: 🛠️ Autodesk
+    type: select
+    proxies:
+      - DIRECT
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇺🇲 美国节点
+      - 🇭🇰 香港节点
+      - 🇸🇬 狮城节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
   - name: 🚀 节点选择
     type: select
     proxies:
@@ -262,6 +277,19 @@ proxy-groups:
       - 🇯🇵 日本节点
       - 🇰🇷 韩国节点
       - 🚀 手动切换
+  - name: 🎵 Spotify
+    type: select
+    proxies:
+      - 🚀 节点选择
+      - ♻️ 自动选择
+      - 🇺🇲 美国节点
+      - 🇭🇰 香港节点
+      - 🇸🇬 狮城节点
+      - 🇨🇳 台湾节点
+      - 🇯🇵 日本节点
+      - 🇰🇷 韩国节点
+      - 🚀 手动切换
+      - DIRECT
   - name: 🎶 网易音乐
     type: select
     include-all: true
@@ -341,6 +369,13 @@ proxy-groups:
     type: select
 
 rule-providers:
+  Autodesk:
+    url: https://raw.githubusercontent.com/REECE-LI/OpenClashRule/refs/heads/main/Autodesk.list
+    path: ./ruleset/Autodesk.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
   LocalAreaNetwork:
     url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/LocalAreaNetwork.list
     path: ./ruleset/LocalAreaNetwork.list
@@ -442,6 +477,13 @@ rule-providers:
   Claude:
     url: https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Claude/Claude.list
     path: ./ruleset/Claude.list
+    behavior: classical
+    interval: 86400
+    format: text
+    type: http
+  Spotify:
+    url: https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Spotify.list
+    path: ./ruleset/Spotify.list
     behavior: classical
     interval: 86400
     format: text

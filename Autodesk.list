@@ -1,0 +1,15 @@
+# Autodesk 相关域名规则
+DOMAIN-SUFFIX,autodesk.com
+DOMAIN-SUFFIX,autodesk.net
+DOMAIN-SUFFIX,autodesk.cn
+DOMAIN-SUFFIX,autodesk.co.jp
+DOMAIN-SUFFIX,autodeskcloud.com
+DOMAIN-SUFFIX,autodeskfusion360.com
+DOMAIN-SUFFIX,maya.com
+DOMAIN-SUFFIX,3ds.com
+DOMAIN-SUFFIX,autocad.com
+DOMAIN-SUFFIX,revit.com
+DOMAIN-SUFFIX,inventor.com
+DOMAIN-SUFFIX,adnxs.com
+DOMAIN-SUFFIX,adsystem.com
+DOMAIN-KEYWORD,autodesk
