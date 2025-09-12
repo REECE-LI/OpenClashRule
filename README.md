@@ -1,5 +1,12 @@
 # OpenClash🐱规则
 
+
+
+## 当前使用
+
+download selforder.yaml 将里面的订阅链接修改为自己的机场，使用clash-party直接导入该yaml文件即可。
+
+
 > 参考视频：
 >
 > [七尺宇Clash软路由的配置](https://www.youtube.com/watch?v=7wiu1YA8Pbc&amp;list=PLSbqX2QvapHk7VYlbyHUIOonIl7q1n410)
