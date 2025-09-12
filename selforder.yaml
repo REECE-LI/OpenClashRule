@@ -24,7 +24,7 @@ dns:
 proxy-providers:
   my-subscription:
     type: http
-    url: "https://cm-sub.pz.pe/subscribe/UZ1C1BCGJOHM2V2O?clash=ssr&trojan"
+    url: "你的订阅链接"
     interval: 3600
     path: ./providers/my-subscription.yaml
     health-check:
