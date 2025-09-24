@@ -24,7 +24,7 @@ dns:
 proxy-providers:
   my-subscription:
     type: http
-    url: "https://cm-sub.pz.pe/subscribe/UZ1C1BCGJOHM2V2O?clash=ssr&trojan"
+    url: "你的订阅链接"
     interval: 3600
     path: ./providers/my-subscription.yaml
     health-check:
@@ -78,6 +78,11 @@ proxy-groups:
   # --------------------- 应用策略分组 ---------------------
   - name: 🤖 OpenAI
     type: select
+    use:
+      - my-subscription
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/OpenAI.png
+  - name: 💻 GitHub
+    type: select
     proxies: &global_policy
       - 🇭🇰 香港自动节点
       - 🇺🇸 美国自动节点
@@ -90,10 +95,6 @@ proxy-groups:
       - ⚡ 手动节点
       - DIRECT
       - REJECT
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/OpenAI.png
-  - name: 💻 GitHub
-    type: select
-    proxies: *global_policy
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/GitHub.png
   - name: 🔧 Copilot
     type: select
@@ -189,11 +190,6 @@ proxy-groups:
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
 
   # --------------------- 主要选择策略 ---------------------
-  - name: 🤖 OpenAI 节点
-    type: select
-    use:
-      - my-subscription
-    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/OpenAI.png
   - name: 🇺🇸 美国自动节点
     type: url-test
     use:
