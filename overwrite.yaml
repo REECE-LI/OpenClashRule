@@ -1,0 +1,449 @@
+port: 7890
+socks-port: 7891
+redir-port: 7892
+mixed-port: 7893
+allow-lan: false
+mode: rule
+log-level: info
+external-controller: 127.0.0.1:9090
+dns:
+  enable: true
+  listen: 0.0.0.0:53
+  default-nameserver:
+    - 223.5.5.5
+    - 8.8.8.8
+  enhanced-mode: fake-ip
+  fake-ip-range: 198.18.0.1/16
+  fake-ip-filter:
+    - "*.lan"
+    - localhost.ptlogin2.qq.com
+  nameserver:
+    - https://doh.pub/dns-query
+    - https://dns.alidns.com/dns-query
+
+# --------------------- 代理组 (Proxy Groups) ---------------------
+proxy-groups:
+  # --------------------- 主要选择策略 ---------------------
+  - name: 💬 OpenAI 节点
+    type: select
+    include-all: true
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/OpenAI.png
+  - name: 🇺🇲 美国自动节点
+    type: url-test
+    include-all: true
+    filter: '(?i)美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维GAS|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States'
+    interval: 300
+    tolerance: 50
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
+  - name: 🇭🇰 香港自动节点
+    type: url-test
+    include-all: true
+    filter: '(?i)港|HK|hk|Hong Kong|HongKong|hongkong'
+    interval: 300
+    tolerance: 50
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+  - name: 🇺🇲 美国节点
+    type: select
+    include-all: true
+    filter: '(?i)美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维GAS|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States'
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
+  - name: 🇭🇰 香港节点
+    type: select
+    include-all: true
+    filter: '(?i)港|HK|hk|Hong Kong|HongKong|hongkong'
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
+  - name: 🚀 手动节点
+    type: select
+    include-all: true
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Rocket.png
+
+  # --------------------- 节点筛选（保留备用） ---------------------
+  - name: 🇯🇵 日本节点
+    type: select
+    include-all: true
+    filter: '(?i)日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan'
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
+  - name: 🇨🇳 台湾节点
+    type: select
+    include-all: true
+    filter: '(?i)台|新北|彰化|TW|Taiwan'
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
+  - name: 🇸🇬 狮城节点
+    type: select
+    include-all: true
+    filter: '(?i)新加坡|坡|狮城|SG|Singapore'
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
+  - name: 🇰🇷 韩国节点
+    type: select
+    include-all: true
+    filter: '(?i)KR|Korea|KOR|首尔|韩|韓'
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
+
+  # --------------------- 应用策略分组 (已全部统一顺序) ---------------------
+  - name: 💬 OpenAi
+    type: select
+    proxies: &global_policy
+      - DIRECT
+      - REJECT
+      - 🇭🇰 香港自动节点
+      - 🇺🇲 美国自动节点
+      - 🇭🇰 香港节点
+      - 🇺🇲 美国节点
+      - 🚀 手动节点
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/OpenAI.png
+  - name: 🐙 GitHub
+    type: select
+    proxies: *global_policy
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/GitHub.png
+  - name: 🤖 Copilot
+    type: select
+    proxies: *global_policy
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
+  - name: 🤖 Gemini
+    type: select
+    proxies: *global_policy
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google.png
+  - name: 🛠️ Autodesk
+    type: select
+    proxies: *global_policy
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Autodesk.png
+  - name: 📲 电报消息
+    type: select
+    proxies: *global_policy
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Telegram.png
+  - name: 🤖 Claude
+    type: select
+    proxies: *global_policy
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Claude.png
+  - name: 📹 油管视频
+    type: select
+    proxies: *global_policy
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/YouTube.png
+  - name: 🎥 奈飞视频
+    type: select
+    proxies: *global_policy
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netflix.png
+  - name: 📺 巴哈姆特
+    type: select
+    proxies: *global_policy
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Bahamut.png
+  - name: 📺 哔哩哔哩
+    type: select
+    proxies: *global_policy
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/bilibili.png
+  - name: 🌍 国外媒体
+    type: select
+    proxies: *global_policy
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/ForeignMedia.png
+  - name: 🌏 国内媒体
+    type: select
+    proxies: *global_policy
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/DomesticMedia.png
+  - name: 📢 谷歌FCM
+    type: select
+    proxies: *global_policy
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Google_Search.png
+  - name: Ⓜ️ 微软Bing
+    type: select
+    proxies: *global_policy
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
+  - name: Ⓜ️ 微软云盘
+    type: select
+    proxies: *global_policy
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/OneDrive.png
+  - name: Ⓜ️ 微软服务
+    type: select
+    proxies: *global_policy
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Microsoft.png
+  - name: 🍎 苹果服务
+    type: select
+    proxies: *global_policy
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Apple.png
+  - name: 🎮 游戏平台
+    type: select
+    proxies: *global_policy
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Game.png
+  - name: 🎵 Spotify
+    type: select
+    proxies: *global_policy
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Spotify.png
+  - name: 🎶 网易音乐
+    type: select
+    proxies: *global_policy
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Netease_Music.png
+  - name: 🎯 全球直连
+    type: select
+    proxies: *global_policy
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Direct.png
+  - name: 🛑 广告拦截
+    type: select
+    proxies: *global_policy
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/AdBlack.png
+  - name: 🍃 应用净化
+    type: select
+    proxies: *global_policy
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/AdWhite.png
+  - name: 🐟 漏网之鱼
+    type: select
+    proxies: *global_policy
+    icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Final.png
+
+# --------------------- 规则集提供者 (Rule Providers) ---------------------
+rule-providers:
+  GitHub:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/master/rule/Clash/GitHub/GitHub.list"
+    path: ./ruleset/GitHub.list
+    interval: 86400
+  Autodesk:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/REECE-LI/OpenClashRule/refs/heads/main/Autodesk.list"
+    path: ./ruleset/Autodesk.list
+    interval: 86400
+  LocalAreaNetwork:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/LocalAreaNetwork.list"
+    path: ./ruleset/LocalAreaNetwork.list
+    interval: 86400
+  UnBan:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/UnBan.list"
+    path: ./ruleset/UnBan.list
+    interval: 86400
+  BanAD:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/BanAD.list"
+    path: ./ruleset/BanAD.list
+    interval: 86400
+  BanProgramAD:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/BanProgramAD.list"
+    path: ./ruleset/BanProgramAD.list
+    interval: 86400
+  GoogleFCM:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/GoogleFCM.list"
+    path: ./ruleset/GoogleFCM.list
+    interval: 86400
+  GoogleCN:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/GoogleCN.list"
+    path: ./ruleset/GoogleCN.list
+    interval: 86400
+  SteamCN:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/SteamCN.list"
+    path: ./ruleset/SteamCN.list
+    interval: 86400
+  Bing:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Bing.list"
+    path: ./ruleset/Bing.list
+    interval: 86400
+  OneDrive:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/OneDrive.list"
+    path: ./ruleset/OneDrive.list
+    interval: 86400
+  Microsoft:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Microsoft.list"
+    path: ./ruleset/Microsoft.list
+    interval: 86400
+  Apple:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Apple.list"
+    path: ./ruleset/Apple.list
+    interval: 86400
+  Telegram:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Telegram.list"
+    path: ./ruleset/Telegram.list
+    interval: 86400
+  Gemini:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/REECE-LI/OpenClashRule/refs/heads/main/gemini_ai.list"
+    path: ./ruleset/gemini_ai.list
+    interval: 86400
+  Copilot:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/REECE-LI/OpenClashRule/refs/heads/main/copilot_ai.list"
+    path: ./ruleset/copilot_ai.list
+    interval: 86400
+  OpenAi:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/OpenAi.list"
+    path: ./ruleset/OpenAi.list
+    interval: 86400
+  Claude:
+    type: http
+    behavior: classical
+    url: "https://raw.githubusercontent.com/blackmatrix7/ios_rule_script/refs/heads/master/rule/Clash/Claude/Claude.list"
+    path: ./ruleset/Claude.list
+    interval: 86400
+  Spotify:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Spotify.list"
+    path: ./ruleset/Spotify.list
+    interval: 86400
+  NetEaseMusic:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/NetEaseMusic.list"
+    path: ./ruleset/NetEaseMusic.list
+    interval: 86400
+  Epic:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Epic.list"
+    path: ./ruleset/Epic.list
+    interval: 86400
+  Origin:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Origin.list"
+    path: ./ruleset/Origin.list
+    interval: 86400
+  Sony:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Sony.list"
+    path: ./ruleset/Sony.list
+    interval: 86400
+  Steam:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Steam.list"
+    path: ./ruleset/Steam.list
+    interval: 86400
+  Nintendo:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Nintendo.list"
+    path: ./ruleset/Nintendo.list
+    interval: 86400
+  YouTube:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/YouTube.list"
+    path: ./ruleset/YouTube.list
+    interval: 86400
+  Netflix:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Netflix.list"
+    path: ./ruleset/Netflix.list
+    interval: 86400
+  Bahamut:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Bahamut.list"
+    path: ./ruleset/Bahamut.list
+    interval: 86400
+  BilibiliHMT:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/BilibiliHMT.list"
+    path: ./ruleset/BilibiliHMT.list
+    interval: 86400
+  Bilibili:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Ruleset/Bilibili.list"
+    path: ./ruleset/Bilibili.list
+    interval: 86400
+  ChinaMedia:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ChinaMedia.list"
+    path: ./ruleset/ChinaMedia.list
+    interval: 86400
+  ProxyMedia:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ProxyMedia.list"
+    path: ./ruleset/ProxyMedia.list
+    interval: 86400
+  ProxyGFWlist:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ProxyGFWlist.list"
+    path: ./ruleset/ProxyGFWlist.list
+    interval: 86400
+  ChinaDomain:
+    type: http
+    behavior: domain
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ChinaDomain.list"
+    path: ./ruleset/ChinaDomain.list
+    interval: 86400
+  ChinaCompanyIp:
+    type: http
+    behavior: ipcidr
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/ChinaCompanyIp.list"
+    path: ./ruleset/ChinaCompanyIp.list
+    interval: 86400
+  Download:
+    type: http
+    behavior: classical
+    url: "https://testingcf.jsdelivr.net/gh/ACL4SSR/ACL4SSR@master/Clash/Download.list"
+    path: ./ruleset/Download.list
+    interval: 86400
+
+# --------------------- 规则 (Rules) ---------------------
+rules:
+  - "RULE-SET,GitHub,🐙 GitHub"
+  - "RULE-SET,OpenAi,💬 OpenAi"
+  - "RULE-SET,Copilot,🤖 Copilot"
+  - "RULE-SET,Gemini,🤖 Gemini"
+  - "RULE-SET,Claude,🤖 Claude"
+  - "RULE-SET,GoogleFCM,📢 谷歌FCM"
+  - "RULE-SET,GoogleCN,📢 谷歌FCM"
+  - "RULE-SET,Autodesk,🛠️ Autodesk"
+  - "RULE-SET,BanAD,🛑 广告拦截"
+  - "RULE-SET,BanProgramAD,🍃 应用净化"
+  - "RULE-SET,YouTube,📹 油管视频"
+  - "RULE-SET,LocalAreaNetwork,🎯 全球直连"
+  - "RULE-SET,UnBan,🎯 全球直连"
+  - "RULE-SET,ChinaDomain,🎯 全球直连"
+  - "RULE-SET,BilibiliHMT,📺 哔哩哔哩"
+  - "RULE-SET,Bilibili,📺 哔哩哔哩"
+  - "RULE-SET,Spotify,🎵 Spotify"
+  - "RULE-SET,Bing,Ⓜ️ 微软Bing"
+  - "RULE-SET,OneDrive,Ⓜ️ 微软云盘"
+  - "RULE-SET,Microsoft,Ⓜ️ 微软服务"
+  - "RULE-SET,Apple,🍎 苹果服务"
+  - "RULE-SET,NetEaseMusic,🎶 网易音乐"
+  - "RULE-SET,Epic,🎮 游戏平台"
+  - "RULE-SET,Origin,🎮 游戏平台"
+  - "RULE-SET,Sony,🎮 游戏平台"
+  - "RULE-SET,Steam,🎮 游戏平台"
+  - "RULE-SET,Nintendo,🎮 游戏平台"
+  - "RULE-SET,SteamCN,🎮 游戏平台"
+  - "RULE-SET,Bahamut,📺 巴哈姆特"
+  - "RULE-SET,ChinaMedia,🌏 国内媒体"
+  - "RULE-SET,Netflix,🎥 奈飞视频"
+  - "RULE-SET,Telegram,📲 电报消息"
+  - "RULE-SET,ProxyMedia,🌍 国外媒体"
+  - "RULE-SET,ProxyGFWlist,🌍 国外媒体"
+  - "RULE-SET,ChinaCompanyIp,🎯 全球直连"
+  - "RULE-SET,Download,🎯 全球直连"
+  - "GEOIP,CN,🎯 全球直连"
+  - "MATCH,🐟 漏网之鱼"

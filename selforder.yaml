@@ -21,16 +21,6 @@ dns:
     - https://doh.pub/dns-query
     - https://dns.alidns.com/dns-query
 
-proxy-providers:
-  my-subscription:
-    type: http
-    url: "你的订阅链接"
-    interval: 3600
-    path: ./providers/my-subscription.yaml
-    health-check:
-      enable: true
-      interval: 600
-      url: http://www.gstatic.com/generate_204
 
 rules:
   - "RULE-SET,OpenAi,💬 OpenAi"
@@ -327,6 +317,7 @@ proxy-groups:
       - 🇺🇲 美国节点
       - 🇰🇷 韩国节点
       - 🚀 手动切换
+  
   - name: 🇭🇰 香港节点
     include-all: true
     filter: (?i)港|HK|hk|Hong Kong|HongKong|hongkong

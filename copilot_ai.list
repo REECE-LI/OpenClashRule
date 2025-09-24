@@ -1,8 +1,4 @@
-
-
-
 DOMAIN,api.individual.githubcopilot.com
 DOMAIN-SUFFIX,individual.githubcopilot.com
 DOMAIN-SUFFIX,telemetry.individual.githubcopilot.com
 DOMAIN-SUFFIX,githubcopilot.com
-DOMAIN-SUFFIX,gemini.google.com
