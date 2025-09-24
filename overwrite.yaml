@@ -26,56 +26,56 @@ proxy-groups:
   # --------------------- 主要选择策略 ---------------------
   - name: 🤖 OpenAI 节点
     type: select
-    use: [] # 改为空数组，让系统自动包含所有节点
+    include-all: true
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/OpenAI.png
   - name: 🇺🇸 美国自动节点
     type: url-test
-    use: []
+    include-all: true
     filter: '(?i)美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|America|美国'
     interval: 300
     tolerance: 50
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
   - name: 🇭🇰 香港自动节点
     type: url-test
-    use: []
+    include-all: true
     filter: '(?i)港|HK|hk|Hong Kong|HongKong|hongkong|香港'
     interval: 300
     tolerance: 50
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
   - name: 🇺🇸 美国节点
     type: select
-    use: []
+    include-all: true
     filter: '(?i)美|波特兰|达拉斯|俄勒冈|凤凰城|费利蒙|硅谷|拉斯维加斯|洛杉矶|圣何塞|圣克拉拉|西雅图|芝加哥|US|United States|America|美国'
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/United_States.png
   - name: 🇭🇰 香港节点
     type: select
-    use: []
+    include-all: true
     filter: '(?i)港|HK|hk|Hong Kong|HongKong|hongkong|香港'
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Hong_Kong.png
   - name: ⚡ 手动节点
     type: select
-    use: []
+    include-all: true
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Rocket.png
 
   # --------------------- 节点筛选（保留备用） ---------------------
   - name: 🎌 日本节点
     type: select
-    use: []
+    include-all: true
     filter: '(?i)日本|川日|东京|大阪|泉日|埼玉|沪日|深日|JP|Japan|日|东京'
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Japan.png
   - name: 🇹🇼 台湾节点
     type: select
-    use: []
+    include-all: true
     filter: '(?i)台|新北|彰化|TW|Taiwan|台湾|台北'
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Taiwan.png
   - name: 🇸🇬 新加坡节点
     type: select
-    use: []
+    include-all: true
     filter: '(?i)新加坡|坡|狮城|SG|Singapore'
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Singapore.png
   - name: 🇰🇷 韩国节点
     type: select
-    use: []
+    include-all: true
     filter: '(?i)KR|Korea|KOR|首尔|韩|韓|韩国'
     icon: https://raw.githubusercontent.com/Koolson/Qure/master/IconSet/Color/Korea.png
 
